@@ -1,29 +1,131 @@
-Um prompt eficaz para gerar imagens de IA não é apenas uma frase, mas uma receita com ingredientes específicos. O agente deve organizar o prompt final seguindo esta estrutura:letsenhance.io
-+2
-Assunto Principal (Subject): Quem ou o quê. Deve ser o mais específico possível.stockimg.ai
-Exemplo ruim: "Uma mulher".
-Exemplo bom: "Uma mulher de 30 anos, com ascendência brasileira e japonesa, cabelo curto azul, e uma expressão confiante".stockimg.ai
-stockimg.ai
-Ação e Ambiente (Action & Environment): O que o sujeito está fazendo e onde. Isso dá contexto e narrativa à imagem.maxwebsolutions.co.uk
-+1
-Exemplo: "sentada em um café de estilo industrial em São Paulo, mexendo em seu laptop, com uma xícara de café ao lado".
-maxwebsolutions.co.uk
-+1
-Estilo e Estética (Style & Aesthetics): A parte mais importante para a direção de arte. Define o "look and feel" da imagem.letsenhance.io
-+1
-Exemplo: "Ilustração digital com traços de anime moderno, estilo de arte de estúdio de animação japonês, super detalhado, fantasia".
-Outras opções: "Fotografia realista", "Pintura a óleo no estilo de Van Gogh", "Arte de pixel retrô", "Cinematic shot".xpert.digital
-+1
-letsenhance.io
-+3
-Composição e Iluminação (Composition & Lighting): Como a "câmera" captura a cena. Controla o enquadramento e a atmosfera.captions.ai
-+1
-Exemplo: "Close-up do rosto (headshot), iluminação suave de estúdio (soft studio light), fundo desfocado (bokeh), tons quentes".midjourney.com
-captions.ai
-+1
-Parâmetros Técnicos (Technical Parameters): Comandos específicos da plataforma de IA.
-Exemplo: --ar 16:9 (para proporção de tela widescreen), --v 7.0 (versão do modelo), --style raw (para menos estilização da IA).robertodiasduarte.com.br
-robertodiasduarte.com.br
-Prompts Negativos (Negative Prompts): O que não incluir na imagem, para evitar erros comuns.letsenhance.io
-+1
-Exemplo: --no text, watermark, extra fingers (sem texto, marca d'água, dedos extras).
+# Documentação Técnica — Geração de Imagens e Vídeos Consistentes de Personas em Plataformas de IA
+
+## Sumário
+- [Introdução](#introdução)
+- [Plataformas Suportadas](#plataformas-suportadas)
+- [Definição de Persona](#definição-de-persona)
+- [Estratégias para Geração de Prompts Consistentes](#estratégias-para-gera%C3%A7%C3%A3o-de-prompts-consistentes)
+- [Exemplos de Prompts](#exemplos-de-prompts)
+- [Automação e Integração API](#automação-e-integração-api)
+- [Boas Práticas para Consistência](#boas-práticas-para-consistência)
+- [Fluxo de Geração de Vídeos](#fluxo-de-gera%C3%A7%C3%A3o-de-v%C3%ADdeos)
+- [Considerações Éticas](#considerações-éticas)
+- [Referências](#referências)
+
+---
+
+## Introdução
+
+Este documento orienta como criar imagens e vídeos de personas em plataformas de IA generativa (VEO3, Midjourney, DALL-E) utilizando prompts estruturados e técnicas de engenharia de prompt para manter alta consistência visual e narrativa.
+
+---
+
+## Plataformas Suportadas
+
+- **VEO3** (Google): Focado em geração de vídeos a partir de prompts detalhados e multimodais.
+- **Midjourney**: Geração avançada de imagens por meio de prompts textuais no Discord.
+- **DALL-E** (OpenAI): Geração de imagens estáticas com alto controle de estilo e composição via API ou interface web.
+
+---
+
+## Definição de Persona
+
+Antes de gerar imagens/vídeos, defina claramente a persona:
+- **Nome:** Ex: "Sofia Tech"
+- **Demografia:** Idade, gênero, etnia
+- **Características físicas:** Cabelo, olhos, roupas, acessórios
+- **Expressão facial e postura:** Sorridente, postura confiante
+- **Estilo visual:** Fotorealista, cartoon, cyberpunk, minimalista
+- **Ambiente/contexto:** Escritório moderno, rua movimentada, cenário natural
+- **Narrativa:** Personalidade, hobbies, profissão
+
+> **Sugestão:** Crie um documento padrão para cada persona com todos os atributos detalhados e exemplos visuais de referência.
+
+---
+
+## Estratégias para Geração de Prompts Consistentes
+
+1. **Prompt Base:** Crie um prompt principal que descreva a persona com detalhes.
+2. **Prompt Modular:** Adicione variações (posição, expressão, cenário) sem alterar atributos fixos.
+3. **Estilo Controlado:** Sempre inclua palavras-chave de estilo e contexto ("in cyberpunk style", "studio lighting", "portrait").
+4. **Seed/Reference:** Utilize recursos de referência (imagem inicial, seed fixa, "reference image") para garantir consistência, se suportado pela plataforma.
+5. **Reutilização:** Salve e reutilize prompts bem-sucedidos.
+
+---
+
+## Exemplos de Prompts
+
+### Midjourney
+```
+Portrait of Sofia Tech, a young female influencer, 25 years old, brown hair in a bun, green eyes, wearing a blue blazer and smart glasses, smiling confidently, in a modern tech office, photorealistic, soft studio lighting --v 6 --ar 16:9
+```
+
+### DALL-E
+```
+A photorealistic portrait of a 25-year-old woman named Sofia Tech, brown hair in a bun, green eyes, wearing a blue business blazer and smart glasses, smiling confidently, inside a modern tech workspace
+```
+
+### VEO3 (Vídeo)
+```
+Generate a 10-second video showing Sofia Tech, a 25-year-old woman with brown hair in a bun and green eyes, wearing a blue blazer and smart glasses, walking through a modern tech office, smiling confidently, interacting with a digital wall, cinematic lighting
+```
+
+---
+
+## Automação e Integração API
+
+### DALL-E (OpenAI API)
+```python
+import openai
+
+response = openai.Image.create(
+    prompt="A photorealistic portrait of Sofia Tech, a 25-year-old woman...",
+    n=1,
+    size="1024x1024"
+)
+image_url = response['data'][0]['url']
+```
+
+### Midjourney (Bot/Discord)
+- Use comandos `/imagine` com prompts padronizados.
+- Automatize via bots que enviam prompts programados.
+
+### VEO3
+- Consulte documentação oficial para envio de prompts multimodais e arquivos de referência.
+- Use parâmetros para controlar seed, frame e consistência.
+
+---
+
+## Boas Práticas para Consistência
+
+- **Padronize Prompts:** Mantenha estrutura e vocabulário iguais em todos prompts.
+- **Use Seeds ou Referências:** Sempre que possível, aplique seeds ou imagens base para manter a identidade visual.
+- **Documente Resultados:** Salve exemplos aprovados e seus prompts.
+- **Controle de Versões:** Mantenha histórico de alterações nos prompts para rastrear mudanças de estilo.
+
+---
+
+## Fluxo de Geração de Vídeos
+
+1. **Defina a Persona e o Roteiro.**
+2. **Crie prompts para cada cena/quadro, mantendo descrições consistentes.**
+3. **Envie prompts para a plataforma (VEO3/DALL-E/Midjourney).**
+4. **Ajuste e revise resultados.**
+5. **Monte o vídeo final, se necessário, usando editor externo (DaVinci Resolve, Premiere, etc).**
+
+---
+
+## Considerações Éticas
+
+- Não utilize personas reais sem consentimento.
+- Evite estereótipos e representações potencialmente ofensivas.
+- Sinalize conteúdo gerado por IA quando necessário.
+- Proteja dados sensíveis e respeite direitos autorais de imagens de referência.
+
+---
+
+## Referências
+
+- [OpenAI DALL-E Documentation](https://platform.openai.com/docs/guides/images)
+- [Midjourney Prompt Guide](https://docs.midjourney.com/docs/prompts)
+- [Google Veo (VEO3) Overview](https://blog.google/technology/ai/google-veo-video-generation/)
