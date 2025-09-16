@@ -1,0 +1,29 @@
+Um prompt eficaz para gerar imagens de IA não é apenas uma frase, mas uma receita com ingredientes específicos. O agente deve organizar o prompt final seguindo esta estrutura:letsenhance.io
++2
+Assunto Principal (Subject): Quem ou o quê. Deve ser o mais específico possível.stockimg.ai
+Exemplo ruim: "Uma mulher".
+Exemplo bom: "Uma mulher de 30 anos, com ascendência brasileira e japonesa, cabelo curto azul, e uma expressão confiante".stockimg.ai
+stockimg.ai
+Ação e Ambiente (Action & Environment): O que o sujeito está fazendo e onde. Isso dá contexto e narrativa à imagem.maxwebsolutions.co.uk
++1
+Exemplo: "sentada em um café de estilo industrial em São Paulo, mexendo em seu laptop, com uma xícara de café ao lado".
+maxwebsolutions.co.uk
++1
+Estilo e Estética (Style & Aesthetics): A parte mais importante para a direção de arte. Define o "look and feel" da imagem.letsenhance.io
++1
+Exemplo: "Ilustração digital com traços de anime moderno, estilo de arte de estúdio de animação japonês, super detalhado, fantasia".
+Outras opções: "Fotografia realista", "Pintura a óleo no estilo de Van Gogh", "Arte de pixel retrô", "Cinematic shot".xpert.digital
++1
+letsenhance.io
++3
+Composição e Iluminação (Composition & Lighting): Como a "câmera" captura a cena. Controla o enquadramento e a atmosfera.captions.ai
++1
+Exemplo: "Close-up do rosto (headshot), iluminação suave de estúdio (soft studio light), fundo desfocado (bokeh), tons quentes".midjourney.com
+captions.ai
++1
+Parâmetros Técnicos (Technical Parameters): Comandos específicos da plataforma de IA.
+Exemplo: --ar 16:9 (para proporção de tela widescreen), --v 7.0 (versão do modelo), --style raw (para menos estilização da IA).robertodiasduarte.com.br
+robertodiasduarte.com.br
+Prompts Negativos (Negative Prompts): O que não incluir na imagem, para evitar erros comuns.letsenhance.io
++1
+Exemplo: --no text, watermark, extra fingers (sem texto, marca d'água, dedos extras).
